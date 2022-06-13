@@ -1,0 +1,30 @@
+﻿@model IEnumerable<KiemTra_NguyenMinhHao.Models.HocPhan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table border="1px">
+    <tr>
+        <th>MaHP</th>
+        <th>TenHP</th>
+        <th>SoTinChi</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaHP</td>
+            <td>@item.TenHP</td>
+            <td>@item.SoTinChi</td>
+            
+            <td>
+                @Html.ActionLink("Đăng Ký", "DangKy", new { id = item.MaHP })
+            </td>
+        </tr>
+    }
+</table>
+<p>2022 - Nguyen Minh Hao</p>    
+
